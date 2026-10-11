@@ -1,0 +1,17 @@
+Haegemonia-bik.mp4converter.exe bundles a reduced build of FFmpeg (ffmpeg.exe, embedded as a resource)
+=========================================================================================
+
+FFmpeg 7.1.1  -  https://ffmpeg.org  -  source: https://github.com/FFmpeg/FFmpeg/tree/n7.1.1  (tag n7.1.1)
+x264          -  https://www.videolan.org/developers/x264.html  -  source: https://code.videolan.org/videolan/x264
+                 (built from commit c24e06c2e184345ceb33eb20a15d1024d9fd3497, GitHub mirror https://github.com/mirror/x264)
+
+Because the build includes x264 (GPL), the bundled ffmpeg.exe is licensed under the GNU General Public License,
+version 2 or later (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+FFmpeg and x264 are NOT part of this project's own code (PolyForm Noncommercial 1.0.0); Haegemonia-bik.mp4converter only starts
+ffmpeg.exe as a separate program with command-line arguments.
+
+The exact build recipe is in BUILD.md in this folder, so anyone can rebuild ffmpeg.exe from the sources above.
+If you cannot get the source code from the links above, open an issue in the repository and the maintainers will
+provide it.
+
+FFmpeg is a trademark of Fabrice Bellard, originator of the FFmpeg project.
