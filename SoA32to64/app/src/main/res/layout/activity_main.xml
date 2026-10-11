@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_main"
+        android:textSize="13sp"
+        android:paddingBottom="12dp" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/about_button" />
+
+    <Button
+        android:id="@+id/zettaBridgeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/zettabridge_button" />
+
+    <TextView
+        android:id="@+id/selectedFileLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_file_selected"
+        android:textStyle="italic"
+        android:paddingBottom="8dp" />
+
+    <Button
+        android:id="@+id/pickButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_apk_button" />
+
+    <Button
+        android:id="@+id/patchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/patch_button" />
+
+    <Button
+        android:id="@+id/downloadApkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/save_apk_button" />
+
+    <Button
+        android:id="@+id/downloadLogButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/download_log_button" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:nestedScrollingEnabled="true"
+        android:background="#111111">
+
+        <TextView
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="#D0D0D0"
+            android:textSize="11sp"
+            android:padding="8dp"
+            android:text="" />
+    </ScrollView>
+
+</LinearLayout>
+</ScrollView>

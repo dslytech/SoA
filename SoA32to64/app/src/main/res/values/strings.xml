@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SoA32to64</string>
+
+    <string name="title_main">SoA32to64</string>
+    <string name="subtitle_main">Makes a ZettaBridge-ready copy of your own Haegemonia: Legions of Iron or Imperium Galactica 2 APK, so the old 32-bit game can run on a 64-bit-only phone through the separate ZettaBridge launcher. This app contains no game files and no ZettaBridge code - it only modifies your own file. Pick the ORIGINAL, unpatched game APK. The result (…-zb.apk) is NOT installed: import it in the ZettaBridge launcher.</string>
+
+    <string name="no_file_selected">No file selected.</string>
+    <string name="selected_file">Selected: %1$s</string>
+
+    <string name="zettabridge_button">[Needed once] Download ZettaBridge launcher (0.1.0)</string>
+    <string name="toast_open_link_failed">Could not open the link - open it in a browser: github.com/ZailoxTT/ZettaBridge/releases</string>
+
+    <string name="pick_apk_button">[Step 1] Choose the game APK</string>
+    <string name="patch_button">[Step 2] Make the ZettaBridge APK</string>
+    <string name="save_apk_button">[Step 3] Save …-zb.apk to Downloads</string>
+    <string name="download_log_button">[Optional] Save log to Downloads</string>
+
+    <string name="toast_patch_done">Done: %1$s - now press Step 3.</string>
+    <string name="toast_patch_error">Something went wrong - see the log. Save the log (button below) and send it over so it can be fixed.</string>
+    <string name="toast_no_log_yet">No log yet - run a patch first.</string>
+    <string name="toast_no_apk_yet">No patched APK yet.</string>
+    <string name="toast_apk_saved">Saved to Downloads: %1$s</string>
+    <string name="toast_apk_save_failed">Could not save the APK to Downloads.</string>
+    <string name="toast_log_saved">Saved to Downloads: %1$s</string>
+    <string name="toast_log_save_failed">Could not save the log to Downloads.</string>
+    <string name="about_button">About / License</string>
+    <string name="about_title">About</string>
+    <string name="about_close">Close</string>
+    <string name="about_body">SoA32to64\nVersion %1$s\n\nPrepares your own copy of an old 32-bit game for the separate ZettaBridge launcher, so it can run on a 64-bit-only CPU. For devices whose CPU can run 32-bit apps use the companion project SoA instead.\n\nThis app contains no game files and no ZettaBridge code, and does not download any. It is an independent helper, not affiliated with ZettaBridge.\n\nLicense\nCopyright (c) 2026 the SoA authors\n\nPolyForm Noncommercial License 1.0.0\n(https://polyformproject.org/licenses/noncommercial/1.0.0)\n\nFree for personal and other noncommercial use. You may use, study, modify and share it for noncommercial purposes. Commercial use is NOT permitted. Provided as is, without warranty of any kind.\n\nUse it only with games you own. Do not share patched APKs or game files - share only the tool.\n\nThird-party components (their own licenses apply):\n - AndroidX / Material Components - Apache License 2.0\n - smali / baksmali / dexlib2 - BSD-3-Clause / Apache 2.0\n - apksig - Apache License 2.0\n - ARSCLib - MIT License\n\nDeveloped with the assistance of Anthropic Claude.\n\nThanks to ZailoxTT for ZettaBridge (https://github.com/ZailoxTT/ZettaBridge) - without it none of this would run. ZettaBridge has its own license (PolyForm Noncommercial + Perimeter); please follow it.</string>
+</resources>
