@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <!-- Android 13+ "themed icons" (and several OEM launchers' own icon
+         theming, e.g. Honor/Magic UI) can recolor the icon using the
+         device's system accent color when that launcher setting is on -
+         which is very likely why the icon showed up blue: that's the
+         OS/launcher applying ITS OWN accent color on top, not our actual
+         green/white design (the raw, non-themed icon is unaffected and
+         stays green - see ic_launcher_background.xml). Providing this
+         monochrome layer at least means the shape used for that themed
+         rendering is our own controller+wrench silhouette rather than an
+         auto-generated approximation of it; the tint color itself is
+         chosen by the OS and isn't something an app can override. If the
+         blue look is unwanted, "Themed icons" can usually be turned off
+         (globally, or per-app on launchers that support it) in the
+         launcher's own settings. -->
+    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Needed to trigger the system package installer on the patched APK
+         we produce ourselves - not used for anything else, and not needed
+         at all on Android 8-13 where a plain ACTION_VIEW/installer intent
+         is enough (the OS itself still gates the actual install behind its
+         own "install unknown apps" per-app toggle, which this permission
+         does not bypass). -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- Needed ONLY for the "clear OBB folder" utility button on the main screen: a plain
+         app cannot touch another app's Android/obb/<package> folder at all (that's a
+         different app's external storage), which is exactly why a leftover/orphaned OBB
+         folder from a previous install can survive a full uninstall and silently block a
+         fresh reinstall (black screen / "main expansion package file: IO Error" / game
+         won't launch - found and confirmed on IG2 + Haegemonia, 2026-10-05). This lets the
+         user grant SoA access, once, on their own personal device, purely so the app can
+         delete that stale folder for them instead of them typing adb shell commands. Never
+         used to read game data, write into it, or bundle/ship anything - deletion only,
+         and only when the user types a package name and taps the button themselves.
+         tools:ignore="ScopedStorage" is needed because this is deliberately the broad,
+         user-granted form of the permission rather than scoped storage, for exactly this
+         cross-app case scoped storage cannot otherwise do at all. -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!-- This app does not need internet access - everything it does is
+         local file processing on an APK you pick yourself. -->
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.ApkCompatPatcher"
+        android:name=".PatcherApplication"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Exposes patched APKs (written to our own app-private storage)
+             to the system installer via a content:// URI, as required on
+             Android 7+ (raw file:// URIs to other apps are blocked). -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

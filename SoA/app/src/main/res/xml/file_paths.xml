@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Patched APKs and logs live under the app's own cache dir:
+         .../cache/patched/ and .../cache/logs/ -->
+    <cache-path name="patched" path="patched/" />
+    <cache-path name="logs" path="logs/" />
+</paths>

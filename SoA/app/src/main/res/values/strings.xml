@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">SoA</string>
+
+    <string name="title_main">Save old APK</string>
+    <string name="subtitle_main">Pick your own, legally-owned APK file. This app does not contain or download any game files - it only modifies your own file and writes a patched copy.</string>
+
+    <string name="no_file_selected">No file selected.</string>
+    <string name="selected_file">Selected: %1$s</string>
+
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="target_sdk_label">targetSdkVersion (leave blank for default: 30)</string>
+    <string name="use_custom_keystore">Use my own keystore (default: auto-generated, stored key)</string>
+    <string name="pick_keystore_button">Choose keystore file (.jks / .keystore)</string>
+    <string name="no_keystore_selected">No keystore selected.</string>
+    <string name="selected_keystore">Selected: %1$s</string>
+    <string name="keystore_alias_hint">alias (e.g. patchkey)</string>
+    <string name="keystore_password_hint">password</string>
+
+    <string name="force_user_orientation">Free rotation (follow device orientation)</string>
+    <string name="force_user_orientation_hint">Off by default. Bakes in android:screenOrientation=user, same effect as the \"am compat enable OVERRIDE_ANY_ORIENTATION_TO_USER\" adb command - but built into the APK. Only rotates if your device\'s own auto-rotate is on, and a game that sets its own orientation at startup can still override it. Works for any game.</string>
+
+    <string name="force_resizable">Resizable / multi-window support</string>
+    <string name="force_resizable_hint">Off by default. Bakes in android:resizeableActivity=true, same effect as the \"am compat enable FORCE_RESIZE_APP\" adb command. Note: on some devices/launchers this alone can make the game open in a smaller floating window instead of fullscreen by default - try leaving this off (and using only free rotation above) if that happens.</string>
+
+    <string name="pick_apk_button">[Step 1] Choose APK</string>
+    <string name="patch_button">[Step 2] Patch</string>
+    <string name="install_button">[Step 3] Install</string>
+    <string name="download_apk_button">[Optional] Download APK</string>
+    <string name="download_log_button">[Optional] Download log</string>
+
+    <string name="toast_invalid_target_sdk">Invalid targetSdkVersion value.</string>
+    <string name="toast_keystore_required">To use your own keystore, pick a file and enter both the alias and the password.</string>
+    <string name="toast_patch_done">Done: %1$s</string>
+    <string name="toast_patch_error">Something went wrong - see the log. Download the log (button below) and send it over so it can be fixed.</string>
+    <string name="toast_install_launch_failed">Could not start the installer: %1$s</string>
+    <string name="toast_no_log_yet">No log yet - run a patch first.</string>
+    <string name="toast_no_apk_yet">No patched APK yet.</string>
+    <string name="toast_apk_saved">Saved to Downloads: %1$s</string>
+    <string name="toast_apk_save_failed">Could not save the APK to Downloads.</string>
+    <string name="toast_log_saved">Saved to Downloads: %1$s</string>
+    <string name="toast_log_save_failed">Could not save the log to Downloads.</string>
+
+    <string name="obb_toggle">Clear OBB folder (advanced)</string>
+    <string name="obb_section_title">Clear OBB folder (before reinstalling)</string>
+    <string name="obb_section_hint">A full uninstall sometimes leaves a leftover Android/obb folder behind, which can then block the next install (black screen / "IO Error" / game won\'t start). This deletes that package\'s whole obb folder - copy your own .obb file and videos back in afterward, before launching the game.</string>
+    <string name="grant_all_files_access_button">Grant permission (All files access)</string>
+    <string name="ig2_shortcut_button">Fill in: Imperium Galactica 2</string>
+    <string name="haegemonia_shortcut_button">Fill in: Haegemonia</string>
+    <string name="obb_package_hint">package name, e.g. com.digitalreality.ig2</string>
+    <string name="clear_obb_button">Delete OBB folder</string>
+    <string name="toast_all_files_access_not_needed">This permission isn\'t needed on this Android version.</string>
+    <string name="toast_all_files_access_already_granted">Already granted.</string>
+    <string name="toast_all_files_access_open_failed">Could not open the settings screen - open it manually: Settings → Apps → SoA → Permissions.</string>
+    <string name="toast_obb_package_required">Enter the game\'s package name first.</string>
+    <string name="toast_need_all_files_access">Grant \"All files access\" first (button above).</string>
+    <string name="toast_obb_not_found">No obb folder found at: %1$s</string>
+    <string name="toast_obb_deleted">Deleted: %1$s</string>
+    <string name="toast_obb_delete_failed">Could not delete the folder.</string>
+    <string name="dialog_confirm_delete_title">Delete OBB folder</string>
+    <string name="dialog_confirm_delete_message">Delete this folder completely?\n\n%1$s\n\nYou\'ll need to copy the .obb file and videos back in by hand before launching the game.</string>
+    <string name="dialog_delete_confirm">Delete</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="about_button">About / License</string>
+    <string name="about_title">About</string>
+    <string name="about_close">Close</string>
+    <string name="about_body">SoA (Save old APK)\nVersion %1$s\n\nTries to repair your own copy of an old Android game so it installs and runs on modern Android. Works on the device, no root needed. For devices whose CPU can run 32-bit apps (32-bit or 32+64-bit CPU). For a 64-bit-only CPU use the companion project SoA32to64.\n\nThis app contains no game files and does not download any.\n\nLicense\nCopyright (c) 2026 the SoA authors\n\nPolyForm Noncommercial License 1.0.0\n(https://polyformproject.org/licenses/noncommercial/1.0.0)\n\nFree for personal and other noncommercial use. You may use, study, modify and share it for noncommercial purposes. Commercial use is NOT permitted. Provided as is, without warranty of any kind.\n\nUse it only with games you own. Do not share patched APKs or game files - share only the tool.\n\nThird-party components (their own licenses apply):\n - AndroidX / Material Components - Apache License 2.0\n - smali / baksmali / dexlib2 - BSD-3-Clause / Apache 2.0\n - apksig - Apache License 2.0\n - ARSCLib - MIT License\n\nDeveloped with the assistance of Anthropic Claude.\n\nThanks to ZailoxTT for ZettaBridge (https://github.com/ZailoxTT/ZettaBridge), which makes the 64-bit-only companion SoA32to64 possible.</string>
+</resources>
