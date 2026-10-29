@@ -29,14 +29,24 @@ Newer ARMv9-A CPUs are usually 64-bit only. The old games are 32-bit, so what co
 
 ## Tested games
 
-| Game | SoA (tested on Honor Pad X8a, 32+64-bit CPU) | SoA32to64 (tested on Honor 400, 64-bit-only CPU) |
-|---|---|---|
-| Haegemonia: Legions of Iron | works | works |
-| Imperium Galactica 2 | works | works |
-| Colin McRae Rally | works | not yet (ZettaBridge limit) |
-| Carmageddon | works | not yet (ZettaBridge limit) |
-| Dead Space | works | not yet (ZettaBridge limit) |
-| Mass Effect: Infiltrator | **on hold** - despite many attempts it never started | - |
+### SoA 0.1a - for 32-bit and 32+64-bit CPUs (tested on Honor Pad X8a)
+
+| Game | State |
+|---|---|
+| Haegemonia: Legions of Iron | works |
+| Imperium Galactica 2 | works |
+| Colin McRae Rally | works |
+| Carmageddon | works |
+| Dead Space | works |
+| Mass Effect: Infiltrator | works - **the game data goes into `Android/obb`, NOT `Android/data`** (see [`SoA/README.md`](SoA/README.md)) |
+
+### SoA32to64 0.1 - for 64-bit-only CPUs (tested on Honor 400)
+
+| Game | State |
+|---|---|
+| Haegemonia: Legions of Iron | works |
+| Imperium Galactica 2 | works |
+| Colin McRae Rally, Carmageddon, Dead Space, Mass Effect: Infiltrator | not supported (ZettaBridge limits / not tested) |
 
 SoA32to64 accepts only the working games (Haegemonia, Imperium Galactica 2). Other games may or may not work with SoA, no promises.
 Details in the folder READMEs: [`SoA/README.md`](SoA/README.md), [`SoA32to64/README.md`](SoA32to64/README.md).
