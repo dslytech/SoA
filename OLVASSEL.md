@@ -29,14 +29,24 @@ Az újabb ARMv9-A CPU-k általában csak 64 bitesek. A régi játékok 32 bitese
 
 ## Tesztelt játékok
 
-| Játék | SoA (Honor Pad X8a, 32+64 bites CPU) | SoA32to64 (Honor 400, csak 64 bites CPU) |
-|---|---|---|
-| Haegemonia: Legions of Iron | működik | működik |
-| Imperium Galactica 2 | működik | működik |
-| Colin McRae Rally | működik | még nem (ZettaBridge korlát) |
-| Carmageddon | működik | még nem (ZettaBridge korlát) |
-| Dead Space | működik | még nem (ZettaBridge korlát) |
-| Mass Effect: Infiltrator | **szünetel** - sok próbálkozás ellenére sem indult el | - |
+### SoA 0.1a - 32 bites és 32+64 bites CPU-khoz (Honor Pad X8a-n tesztelve)
+
+| Játék | Állapot |
+|---|---|
+| Haegemonia: Legions of Iron | működik |
+| Imperium Galactica 2 | működik |
+| Colin McRae Rally | működik |
+| Carmageddon | működik |
+| Dead Space | működik |
+| Mass Effect: Infiltrator | működik - **a játék adatfájljai az `Android/obb` mappába kerülnek, NEM az `Android/data`-ba** (lásd [`SoA/OLVASSEL.md`](SoA/OLVASSEL.md)) |
+
+### SoA32to64 0.1 - csak 64 bites CPU-khoz (Honor 400-on tesztelve)
+
+| Játék | Állapot |
+|---|---|
+| Haegemonia: Legions of Iron | működik |
+| Imperium Galactica 2 | működik |
+| Colin McRae Rally, Carmageddon, Dead Space, Mass Effect: Infiltrator | nem támogatott (ZettaBridge korlátok / nem tesztelt) |
 
 A SoA32to64 csak a működő játékokat fogadja el (Haegemonia, Imperium Galactica 2). Más játékok a SoA-val működhetnek vagy sem, ígéret nincs.
 A részletek a mappák READMEjében: [`SoA/OLVASSEL.md`](SoA/OLVASSEL.md), [`SoA32to64/OLVASSEL.md`](SoA32to64/OLVASSEL.md).
