@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_main"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_main"
+        android:textSize="13sp"
+        android:paddingBottom="12dp" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/about_button" />
+
+    <TextView
+        android:id="@+id/selectedFileLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_file_selected"
+        android:textStyle="italic"
+        android:paddingBottom="4dp" />
+
+    <CheckBox
+        android:id="@+id/advancedToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/advanced_settings"
+        android:paddingBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/advancedPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1A1A1A"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/target_sdk_label"
+            android:textSize="12sp"
+            android:paddingBottom="2dp" />
+
+        <EditText
+            android:id="@+id/targetSdkInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="30"
+            android:maxLines="1"
+            android:paddingBottom="8dp" />
+
+        <CheckBox
+            android:id="@+id/useCustomKeystoreCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_custom_keystore" />
+
+        <LinearLayout
+            android:id="@+id/keystorePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="4dp">
+
+            <Button
+                android:id="@+id/pickKeystoreButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_keystore_button" />
+
+            <TextView
+                android:id="@+id/selectedKeystoreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_keystore_selected"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
+
+            <EditText
+                android:id="@+id/keystoreAliasInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/keystore_alias_hint"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/keystorePasswordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/keystore_password_hint"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingBottom="4dp" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/forceUserOrientationCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/force_user_orientation"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/force_user_orientation_hint"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:paddingTop="2dp" />
+
+        <CheckBox
+            android:id="@+id/forceResizableCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/force_resizable"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/force_resizable_hint"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:paddingTop="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/pickButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="@string/pick_apk_button" />
+
+        <Button
+            android:id="@+id/patchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:enabled="false"
+            android:text="@string/patch_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/installButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:enabled="false"
+            android:text="@string/install_button" />
+
+        <Button
+            android:id="@+id/downloadApkButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:enabled="false"
+            android:text="@string/download_apk_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/downloadLogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/download_log_button" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/obbToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/obb_toggle"
+        android:paddingBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/obbPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1A1A1A"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/obb_section_title"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:paddingBottom="2dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/obb_section_hint"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:paddingBottom="6dp" />
+
+        <Button
+            android:id="@+id/grantAllFilesAccessButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:paddingBottom="6dp"
+            android:text="@string/grant_all_files_access_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp">
+
+            <Button
+                android:id="@+id/ig2ShortcutButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:textSize="11sp"
+                android:text="@string/ig2_shortcut_button" />
+
+            <Button
+                android:id="@+id/haegemoniaShortcutButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:textSize="11sp"
+                android:text="@string/haegemonia_shortcut_button" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/obbPackageInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/obb_package_hint"
+            android:maxLines="1"
+            android:paddingBottom="4dp" />
+
+        <Button
+            android:id="@+id/clearObbButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_obb_button" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:paddingBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:nestedScrollingEnabled="true"
+        android:background="#111111">
+
+        <TextView
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="#D0D0D0"
+            android:textSize="11sp"
+            android:padding="8dp"
+            android:text="" />
+    </ScrollView>
+
+</LinearLayout>
+</ScrollView>
